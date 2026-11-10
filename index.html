@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adil Digital Kendra - Portal Login</title>
+  <title>Adil Digital Kendra</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -11,39 +11,56 @@
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen font-sans flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
 
-  <!-- LOGIN SCREEN (Default View) -->
+  <!-- LOGIN SCREEN -->
   <div id="login-screen" class="min-h-screen flex items-center justify-center px-4 py-12">
     <div class="max-w-md w-full bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl space-y-6">
       
-      <div class="text-center space-y-2">
+      <!-- Clean Brand Header -->
+      <div class="text-center space-y-3">
         <div class="w-16 h-16 rounded-2xl bg-indigo-600 mx-auto flex items-center justify-center font-black text-3xl text-white shadow-lg shadow-indigo-500/30">
           AD
         </div>
-        <h1 class="text-2xl font-extrabold tracking-tight text-white uppercase pt-2">ADIL DIGITAL KENDRA</h1>
-        <p class="text-xs text-slate-400 font-medium">Session-Locked Cyber Cafe Operator Portal</p>
+        <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase pt-2">ADIL DIGITAL KENDRA</h1>
       </div>
 
+      <!-- Login Form -->
       <form id="operator-login-form" class="space-y-4 pt-2">
         <div>
-          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Username / Key ID</label>
-          <input type="text" id="username-input" required placeholder="Enter operator username" class="w-full bg-slate-950 border border-slate-800 focus:border-indigo-500 rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-all placeholder:text-slate-600" />
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Username</label>
+          <input type="text" id="username-input" required placeholder="Enter username" class="w-full bg-slate-950 border border-slate-800 focus:border-indigo-500 rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-all placeholder:text-slate-600" />
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Access Password</label>
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Password</label>
           <input type="password" id="password-input" required placeholder="Enter password" class="w-full bg-slate-950 border border-slate-800 focus:border-indigo-500 rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-all placeholder:text-slate-600" />
         </div>
 
         <div id="login-error" class="text-xs font-semibold text-rose-500 text-center hidden"></div>
 
         <button type="submit" id="login-btn" class="w-full bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-bold py-3.5 rounded-xl text-sm transition-all shadow-lg shadow-indigo-600/20">
-          Unlock Portal Access
+          Login
         </button>
       </form>
 
-      <p class="text-[11px] text-center text-slate-600">
-        Strict Session Lock Active. Simultaneous logins will revoke current session access.
-      </p>
+      <!-- Contact Support Section with Official Icons -->
+      <div class="pt-6 border-t border-slate-800 text-center space-y-3">
+        <p class="text-xs font-medium text-slate-400">To access the portal, contact us:</p>
+        
+        <div class="flex items-center justify-center gap-3">
+          <!-- WhatsApp Contact Button -->
+          <a href="https://wa.me/917488176848?text=Hello%20Adil%20Digital%20Kendra,%20I%20need%20portal%20access%20key." target="_blank" class="flex items-center space-x-2 bg-slate-950 hover:bg-slate-800 border border-slate-800 px-4 py-2.5 rounded-xl text-xs font-medium text-slate-200 transition-all hover:border-emerald-500/50">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4 object-contain" alt="WhatsApp" />
+            <span>WhatsApp</span>
+          </a>
+
+          <!-- Email Contact Button -->
+          <a href="mailto:byteburner356@gmail.com?subject=Portal%20Access%20Request&body=Hello%20Adil%20Digital%20Kendra,%20I%20want%20to%20get%20access%20to%20the%20portal." class="flex items-center space-x-2 bg-slate-950 hover:bg-slate-800 border border-slate-800 px-4 py-2.5 rounded-xl text-xs font-medium text-slate-200 transition-all hover:border-indigo-500/50">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" class="w-4 h-4 object-contain" alt="Gmail" />
+            <span>Email</span>
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -56,7 +73,7 @@
         <div class="flex items-center space-x-3">
           <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-indigo-500/30">AD</div>
           <div>
-            <h1 class="text-lg sm:text-xl font-extrabold tracking-tight text-white uppercase">ADIL DIGITAL KENDRA</h1>
+            <h1 class="text-lg sm:text-xl font-black tracking-tight text-white uppercase">ADIL DIGITAL KENDRA</h1>
             <p id="user-display" class="text-xs text-indigo-400 font-medium"></p>
           </div>
         </div>
@@ -82,7 +99,6 @@
           <h2 class="text-lg sm:text-xl font-bold text-white tracking-wide">Interactive Tools</h2>
         </div>
         
-        <!-- Responsive Grid -->
         <div id="tools-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4">
           <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
           <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
@@ -90,7 +106,7 @@
         </div>
       </section>
 
-      <!-- Section 2: Important Direct Links -->
+      <!-- Section 2: Portal Services & Links -->
       <section>
         <div class="flex items-center space-x-3 mb-5 border-b border-slate-800 pb-3">
           <span class="h-6 w-1.5 bg-emerald-500 rounded-full"></span>
@@ -114,7 +130,6 @@
   </div>
 
   <script>
-    // Firebase Config Integrated
     const firebaseConfig = {
       apiKey: "AIzaSyBRXbHx6wUVbkHLbtaY9m2p6lcmEHNyubc",
       authDomain: "adil-digital-kendra.firebaseapp.com",
@@ -128,7 +143,6 @@
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
 
-    // DOM Elements
     const loginScreen = document.getElementById('login-screen');
     const mainPortal = document.getElementById('main-portal');
     const loginForm = document.getElementById('operator-login-form');
@@ -141,7 +155,6 @@
     const noticeBanner = document.getElementById('notice-banner');
     const noticeText = document.getElementById('notice-text');
 
-    // Generate Unique Session Token
     function getSessionToken() {
       let token = localStorage.getItem('ad_session_token');
       if (!token) {
@@ -151,13 +164,11 @@
       return token;
     }
 
-    // Auto Login Check
     const storedUser = localStorage.getItem('ad_user');
     if (storedUser) {
       verifyAndUnlock(storedUser);
     }
 
-    // Login Form Submit
     loginForm.addEventListener('submit', (e) => {
       e.preventDefault();
       loginError.classList.add('hidden');
@@ -169,8 +180,6 @@
         const userData = snapshot.val();
         if (userData && userData.password === password) {
           const sessionToken = getSessionToken();
-          
-          // Write Session Lock to DB
           db.ref('users/' + username + '/active_session').set(sessionToken).then(() => {
             localStorage.setItem('ad_user', username);
             verifyAndUnlock(username);
@@ -182,31 +191,22 @@
       });
     });
 
-    // Verify Session Lock Live
     function verifyAndUnlock(username) {
       const currentToken = getSessionToken();
-      
       db.ref('users/' + username + '/active_session').on('value', (snapshot) => {
         const activeToken = snapshot.val();
-        
         if (activeToken === currentToken) {
-          // Valid Session
           loginScreen.classList.add('hidden');
           mainPortal.classList.remove('hidden');
-          userDisplay.innerText = "Operator: " + username;
+          userDisplay.innerText = "User: " + username;
           loadPortalData();
         } else {
-          // Session Taken over by another device
           logout();
-          alert("Account logged in from another device. Session ended.");
         }
       });
     }
 
-    // Logout
-    logoutBtn.addEventListener('click', () => {
-      logout();
-    });
+    logoutBtn.addEventListener('click', logout);
 
     function logout() {
       const username = localStorage.getItem('ad_user');
@@ -218,9 +218,7 @@
       loginScreen.classList.remove('hidden');
     }
 
-    // Load Data when Logged In
     function loadPortalData() {
-      // Fetch Tools Live
       db.ref('tools').on('value', (snapshot) => {
         toolsGrid.innerHTML = '';
         const data = snapshot.val();
@@ -248,7 +246,6 @@
         });
       });
 
-      // Fetch Links Live
       db.ref('links').on('value', (snapshot) => {
         linksGrid.innerHTML = '';
         const data = snapshot.val();
@@ -270,7 +267,6 @@
         });
       });
 
-      // System Notice listener
       db.ref('system/notice_message').on('value', (snapshot) => {
         const msg = snapshot.val();
         if (msg) {
