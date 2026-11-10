@@ -1,70 +1,79 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adil Digital Kendra</title>
+  <title>Adil Digital Kendra - Cyber Cafe Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen font-sans">
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans selection:bg-indigo-500 selection:text-white">
 
   <!-- Header Section -->
-  <header class="bg-slate-800 border-b border-slate-700 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+  <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-xl text-white shadow-lg">AD</div>
+        <div class="w-12 h-12 rounded-xl bg-indigo-600 flex items-center justify-center font-black text-2xl text-white shadow-lg shadow-indigo-500/30">AD</div>
         <div>
-          <h1 class="text-lg font-bold leading-tight">Adil Digital Kendra</h1>
-          <p class="text-xs text-emerald-400 font-medium flex items-center gap-1">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Systems Live
-          </p>
+          <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white uppercase">ADIL DIGITAL KENDRA</h1>
+          <p class="text-xs text-slate-400 font-medium tracking-wide">Professional Cyber Cafe Management Portal</p>
         </div>
+      </div>
+      <div class="hidden sm:flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-full">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Online Portal</span>
       </div>
     </div>
   </header>
 
   <!-- Notice Banner -->
-  <div id="notice-banner" class="bg-indigo-900/50 border-b border-indigo-700/50 px-4 py-2 text-xs text-center text-indigo-200 hidden">
-    <span id="notice-text">Notice loading...</span>
+  <div id="notice-banner" class="bg-indigo-950/80 border-b border-indigo-800/50 px-4 py-2.5 text-xs text-center text-indigo-200 hidden font-medium">
+    <span id="notice-text"></span>
   </div>
 
-  <!-- Main Content Grid -->
-  <main class="max-w-7xl mx-auto px-4 py-6 space-y-8">
+  <!-- Main Content Container -->
+  <main class="max-w-7xl mx-auto px-4 py-8 space-y-10">
     
-    <!-- Section 1: Digital Tools Grid -->
+    <!-- Section 1: Interactive Tools Grid -->
     <section>
-      <div class="flex items-center space-x-2 mb-4">
-        <span class="h-5 w-1 bg-indigo-500 rounded-full"></span>
-        <h2 class="text-base font-semibold text-slate-200">Interactive Tools</h2>
+      <div class="flex items-center space-x-3 mb-5 border-b border-slate-800 pb-3">
+        <span class="h-6 w-1.5 bg-indigo-500 rounded-full"></span>
+        <h2 class="text-lg sm:text-xl font-bold text-white tracking-wide">Interactive Tools</h2>
       </div>
       
       <!-- Responsive Grid: Mobile 3 Columns | Tablet 4 Columns | Desktop 6 Columns -->
-      <div id="tools-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
-        <!-- Skeleton Loader -->
-        <div class="bg-slate-800 rounded-xl p-3 border border-slate-700 animate-pulse h-28"></div>
-        <div class="bg-slate-800 rounded-xl p-3 border border-slate-700 animate-pulse h-28"></div>
-        <div class="bg-slate-800 rounded-xl p-3 border border-slate-700 animate-pulse h-28"></div>
+      <div id="tools-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4">
+        <!-- Skeleton Loaders -->
+        <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
+        <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
+        <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
+        <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
       </div>
     </section>
 
     <!-- Section 2: Important Direct Links -->
     <section>
-      <div class="flex items-center space-x-2 mb-4">
-        <span class="h-5 w-1 bg-emerald-500 rounded-full"></span>
-        <h2 class="text-base font-semibold text-slate-200">Portal Services & Links</h2>
+      <div class="flex items-center space-x-3 mb-5 border-b border-slate-800 pb-3">
+        <span class="h-6 w-1.5 bg-emerald-500 rounded-full"></span>
+        <h2 class="text-lg sm:text-xl font-bold text-white tracking-wide">Portal Services & Links</h2>
       </div>
       
-      <div id="links-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
-        <div class="bg-slate-800 rounded-xl p-3 border border-slate-700 animate-pulse h-28"></div>
-        <div class="bg-slate-800 rounded-xl p-3 border border-slate-700 animate-pulse h-28"></div>
-        <div class="bg-slate-800 rounded-xl p-3 border border-slate-700 animate-pulse h-28"></div>
+      <div id="links-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4">
+        <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
+        <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
+        <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
+        <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
       </div>
     </section>
 
   </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-900 mt-16 py-6 text-center text-xs text-slate-500">
+    <p>&copy; 2026 Adil Digital Kendra. All rights reserved.</p>
+  </footer>
 
   <script>
     // Firebase Config Integrated
@@ -93,25 +102,24 @@
       toolsGrid.innerHTML = '';
       const data = snapshot.val();
       if (!data) {
-        toolsGrid.innerHTML = '<p class="col-span-full text-xs text-slate-400 text-center py-4">Koi tools available nahi hain.</p>';
+        toolsGrid.innerHTML = '<p class="col-span-full text-xs text-slate-500 text-center py-6">No tools available at the moment.</p>';
         return;
       }
       Object.keys(data).forEach(key => {
         const item = data[key];
         const card = document.createElement('div');
-        card.className = "bg-slate-800 hover:bg-slate-750 border border-slate-700 hover:border-indigo-500 rounded-xl p-3 flex flex-col items-center justify-center text-center transition-all cursor-pointer shadow-sm group hover:-translate-y-0.5";
+        card.className = "bg-slate-900 hover:bg-slate-850 border border-slate-800 hover:border-indigo-500/50 rounded-2xl p-4 flex flex-col items-center justify-center text-center transition-all cursor-pointer shadow-lg group hover:-translate-y-1";
         card.onclick = () => {
           if (item.target_url) {
             window.open(item.target_url, '_blank');
           } else if (item.code) {
-            // Open inline dynamic tool runner
             const win = window.open("", "_blank");
             win.document.write(item.code);
           }
         };
         card.innerHTML = `
-          <img src="${item.icon_url || 'https://img.icons8.com/color/96/wrench.png'}" class="w-10 h-10 mb-2 object-contain group-hover:scale-110 transition-transform" />
-          <span class="text-xs font-medium text-slate-200 line-clamp-2 leading-tight">${item.title}</span>
+          <img src="${item.icon_url || 'https://img.icons8.com/color/96/wrench.png'}" class="w-12 h-12 mb-3 object-contain group-hover:scale-110 transition-transform" />
+          <span class="text-xs font-semibold text-slate-200 line-clamp-2 leading-tight">${item.title}</span>
         `;
         toolsGrid.appendChild(card);
       });
@@ -122,7 +130,7 @@
       linksGrid.innerHTML = '';
       const data = snapshot.val();
       if (!data) {
-        linksGrid.innerHTML = '<p class="col-span-full text-xs text-slate-400 text-center py-4">Koi links available nahi hain.</p>';
+        linksGrid.innerHTML = '<p class="col-span-full text-xs text-slate-500 text-center py-6">No links available at the moment.</p>';
         return;
       }
       Object.keys(data).forEach(key => {
@@ -130,10 +138,10 @@
         const card = document.createElement('a');
         card.href = item.target_url || '#';
         card.target = "_blank";
-        card.className = "bg-slate-800 hover:bg-slate-750 border border-slate-700 hover:border-emerald-500 rounded-xl p-3 flex flex-col items-center justify-center text-center transition-all shadow-sm group hover:-translate-y-0.5";
+        card.className = "bg-slate-900 hover:bg-slate-850 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-4 flex flex-col items-center justify-center text-center transition-all shadow-lg group hover:-translate-y-1";
         card.innerHTML = `
-          <img src="${item.icon_url || 'https://img.icons8.com/color/96/link.png'}" class="w-10 h-10 mb-2 object-contain group-hover:scale-110 transition-transform" />
-          <span class="text-xs font-medium text-slate-200 line-clamp-2 leading-tight">${item.title}</span>
+          <img src="${item.icon_url || 'https://img.icons8.com/color/96/link.png'}" class="w-12 h-12 mb-3 object-contain group-hover:scale-110 transition-transform" />
+          <span class="text-xs font-semibold text-slate-200 line-clamp-2 leading-tight">${item.title}</span>
         `;
         linksGrid.appendChild(card);
       });
