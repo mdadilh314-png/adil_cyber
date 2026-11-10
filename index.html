@@ -11,11 +11,18 @@
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen font-sans flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
 
+  <!-- MAINTENANCE OVERLAY -->
+  <div id="maintenance-overlay" class="hidden fixed inset-0 z-50 bg-slate-950 flex flex-col items-center justify-center p-6 text-center">
+    <div class="w-20 h-20 rounded-3xl bg-rose-600/20 border border-rose-500/30 flex items-center justify-center mb-4">
+      <svg class="w-10 h-10 text-rose-500 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+    </div>
+    <h1 class="text-2xl font-black text-white uppercase tracking-wider mb-2">SERVER UNDER MAINTENANCE</h1>
+    <p class="text-xs text-slate-400 max-w-xs">We are currently upgrading systems. Please check back shortly.</p>
+  </div>
+
   <!-- LOGIN SCREEN -->
   <div id="login-screen" class="min-h-screen flex items-center justify-center px-4 py-12">
     <div class="max-w-md w-full bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl space-y-6">
-      
-      <!-- Clean Brand Header -->
       <div class="text-center space-y-3">
         <div class="w-16 h-16 rounded-2xl bg-indigo-600 mx-auto flex items-center justify-center font-black text-3xl text-white shadow-lg shadow-indigo-500/30">
           AD
@@ -23,7 +30,6 @@
         <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase pt-2">ADIL DIGITAL KENDRA</h1>
       </div>
 
-      <!-- Login Form -->
       <form id="operator-login-form" class="space-y-4 pt-2">
         <div>
           <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Username</label>
@@ -42,33 +48,25 @@
         </button>
       </form>
 
-      <!-- Contact Support Section with Official Icons -->
       <div class="pt-6 border-t border-slate-800 text-center space-y-3">
         <p class="text-xs font-medium text-slate-400">To access the portal, contact us:</p>
-        
         <div class="flex items-center justify-center gap-3">
-          <!-- WhatsApp Contact Button -->
-          <a href="https://wa.me/917488176848?text=Hello%20Adil%20Digital%20Kendra,%20I%20need%20portal%20access%20key." target="_blank" class="flex items-center space-x-2 bg-slate-950 hover:bg-slate-800 border border-slate-800 px-4 py-2.5 rounded-xl text-xs font-medium text-slate-200 transition-all hover:border-emerald-500/50">
+          <a href="https://wa.me/917488176848?text=Hello%20Adil%20Digital%20Kendra,%20I%20need%20portal%20access%20key." target="_blank" class="flex items-center space-x-2 bg-slate-950 hover:bg-slate-800 border border-slate-800 px-4 py-2.5 rounded-xl text-xs font-medium text-slate-200 transition-all">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4 object-contain" alt="WhatsApp" />
             <span>WhatsApp</span>
           </a>
-
-          <!-- Email Contact Button -->
-          <a href="mailto:byteburner356@gmail.com?subject=Portal%20Access%20Request&body=Hello%20Adil%20Digital%20Kendra,%20I%20want%20to%20get%20access%20to%20the%20portal." class="flex items-center space-x-2 bg-slate-950 hover:bg-slate-800 border border-slate-800 px-4 py-2.5 rounded-xl text-xs font-medium text-slate-200 transition-all hover:border-indigo-500/50">
+          <a href="mailto:byteburner356@gmail.com?subject=Portal%20Access%20Request" class="flex items-center space-x-2 bg-slate-950 hover:bg-slate-800 border border-slate-800 px-4 py-2.5 rounded-xl text-xs font-medium text-slate-200 transition-all">
             <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" class="w-4 h-4 object-contain" alt="Gmail" />
             <span>Email</span>
           </a>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- MAIN DASHBOARD (Hidden until logged in) -->
+  <!-- MAIN DASHBOARD -->
   <div id="main-portal" class="hidden min-h-screen flex flex-col justify-between">
-    
-    <!-- Header Section -->
-    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50 shadow-md">
+    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-40 shadow-md">
       <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         <div class="flex items-center space-x-3">
           <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-indigo-500/30">AD</div>
@@ -84,49 +82,33 @@
       </div>
     </header>
 
-    <!-- Notice Banner -->
     <div id="notice-banner" class="bg-indigo-950/80 border-b border-indigo-800/50 px-4 py-2.5 text-xs text-center text-indigo-200 hidden font-medium">
       <span id="notice-text"></span>
     </div>
 
-    <!-- Main Content Container -->
     <main class="max-w-7xl mx-auto px-4 py-8 space-y-10 w-full flex-grow">
-      
-      <!-- Section 1: Interactive Tools Grid -->
       <section>
         <div class="flex items-center space-x-3 mb-5 border-b border-slate-800 pb-3">
           <span class="h-6 w-1.5 bg-indigo-500 rounded-full"></span>
           <h2 class="text-lg sm:text-xl font-bold text-white tracking-wide">Interactive Tools</h2>
         </div>
         
-        <div id="tools-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4">
-          <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
-          <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
-          <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
-        </div>
+        <div id="tools-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4"></div>
       </section>
 
-      <!-- Section 2: Portal Services & Links -->
       <section>
         <div class="flex items-center space-x-3 mb-5 border-b border-slate-800 pb-3">
           <span class="h-6 w-1.5 bg-emerald-500 rounded-full"></span>
           <h2 class="text-lg sm:text-xl font-bold text-white tracking-wide">Portal Services & Links</h2>
         </div>
         
-        <div id="links-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4">
-          <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
-          <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
-          <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 animate-pulse h-32"></div>
-        </div>
+        <div id="links-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4"></div>
       </section>
-
     </main>
 
-    <!-- Footer -->
     <footer class="border-t border-slate-900 py-6 text-center text-xs text-slate-500">
       <p>&copy; 2026 Adil Digital Kendra. All rights reserved.</p>
     </footer>
-
   </div>
 
   <script>
@@ -143,6 +125,7 @@
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
 
+    const maintenanceOverlay = document.getElementById('maintenance-overlay');
     const loginScreen = document.getElementById('login-screen');
     const mainPortal = document.getElementById('main-portal');
     const loginForm = document.getElementById('operator-login-form');
@@ -155,6 +138,15 @@
     const noticeBanner = document.getElementById('notice-banner');
     const noticeText = document.getElementById('notice-text');
 
+    // Live Server Maintenance Listener
+    db.ref('system/server_status').on('value', (snap) => {
+      if (snap.val() === 'maintenance') {
+        maintenanceOverlay.classList.remove('hidden');
+      } else {
+        maintenanceOverlay.classList.add('hidden');
+      }
+    });
+
     function getSessionToken() {
       let token = localStorage.getItem('ad_session_token');
       if (!token) {
@@ -162,6 +154,11 @@
         localStorage.setItem('ad_session_token', token);
       }
       return token;
+    }
+
+    function updateLastSeen(username) {
+      const now = new Date().toLocaleString();
+      db.ref('users/' + username).update({ last_seen: now });
     }
 
     const storedUser = localStorage.getItem('ad_user');
@@ -179,9 +176,15 @@
       db.ref('users/' + username).once('value', (snapshot) => {
         const userData = snapshot.val();
         if (userData && userData.password === password) {
+          if (userData.status === 'blocked') {
+            loginError.innerText = "Account Blocked: " + (userData.block_reason || "Violation");
+            loginError.classList.remove('hidden');
+            return;
+          }
           const sessionToken = getSessionToken();
           db.ref('users/' + username + '/active_session').set(sessionToken).then(() => {
             localStorage.setItem('ad_user', username);
+            updateLastSeen(username);
             verifyAndUnlock(username);
           });
         } else {
@@ -199,6 +202,7 @@
           loginScreen.classList.add('hidden');
           mainPortal.classList.remove('hidden');
           userDisplay.innerText = "User: " + username;
+          updateLastSeen(username);
           loadPortalData();
         } else {
           logout();
@@ -228,6 +232,7 @@
         }
         Object.keys(data).forEach(key => {
           const item = data[key];
+          if (item.hidden) return;
           const card = document.createElement('div');
           card.className = "bg-slate-900 hover:bg-slate-850 border border-slate-800 hover:border-indigo-500/50 rounded-2xl p-4 flex flex-col items-center justify-center text-center transition-all cursor-pointer shadow-lg group hover:-translate-y-1";
           card.onclick = () => {
@@ -238,8 +243,12 @@
               win.document.write(item.code);
             }
           };
+          
+          const iconText = (item.icon_text || 'TOOL').substring(0, 8);
           card.innerHTML = `
-            <img src="${item.icon_url || 'https://img.icons8.com/color/96/wrench.png'}" class="w-12 h-12 mb-3 object-contain group-hover:scale-110 transition-transform" />
+            <div class="w-12 h-12 mb-3 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center font-black text-xs text-white shadow-md group-hover:scale-105 transition-transform uppercase">
+              ${iconText}
+            </div>
             <span class="text-xs font-semibold text-slate-200 line-clamp-2 leading-tight">${item.title}</span>
           `;
           toolsGrid.appendChild(card);
@@ -255,12 +264,17 @@
         }
         Object.keys(data).forEach(key => {
           const item = data[key];
+          if (item.hidden) return;
           const card = document.createElement('a');
           card.href = item.target_url || '#';
           card.target = "_blank";
           card.className = "bg-slate-900 hover:bg-slate-850 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-4 flex flex-col items-center justify-center text-center transition-all shadow-lg group hover:-translate-y-1";
+          
+          const iconText = (item.icon_text || 'LINK').substring(0, 8);
           card.innerHTML = `
-            <img src="${item.icon_url || 'https://img.icons8.com/color/96/link.png'}" class="w-12 h-12 mb-3 object-contain group-hover:scale-110 transition-transform" />
+            <div class="w-12 h-12 mb-3 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center font-black text-xs text-white shadow-md group-hover:scale-105 transition-transform uppercase">
+              ${iconText}
+            </div>
             <span class="text-xs font-semibold text-slate-200 line-clamp-2 leading-tight">${item.title}</span>
           `;
           linksGrid.appendChild(card);
